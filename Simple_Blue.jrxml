@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Simple_Blue" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="85c90ca1-112b-43f1-9d1c-58bd267065c2">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MariaDB jardineria"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT emp.nombre, emp.apellido1, emp.apellido2, emp.email, emp.codigo_oficina, ofi.ciudad 
+FROM jardineria.empleado emp
+INNER JOIN jardineria.oficina ofi ON emp.codigo_oficina=ofi.codigo_oficina]]>
+	</queryString>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellido1" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="apellido1"/>
+		<property name="com.jaspersoft.studio.field.label" value="apellido1"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellido2" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="apellido2"/>
+		<property name="com.jaspersoft.studio.field.label" value="apellido2"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="email"/>
+		<property name="com.jaspersoft.studio.field.label" value="email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigo_oficina" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="codigo_oficina"/>
+		<property name="com.jaspersoft.studio.field.label" value="codigo_oficina"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ciudad" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ciudad"/>
+		<property name="com.jaspersoft.studio.field.label" value="ciudad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="oficina"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{nombre}]]></groupExpression>
+		<groupHeader>
+			<band height="39">
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="100" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="d707086a-5059-44ca-90f6-db926bd48e37"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[nombre]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="100" y="0" width="454" height="32" forecolor="#006699" backcolor="#E6E6E6" uuid="6a82ce7a-d89f-45a3-b7db-3eca2afb588f"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nombre} + ' ' + $F{apellido1} + ' ' + $F{apellido2}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="2628d18e-ffc5-42ff-b142-5328a3ac74be"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<groupExpression><![CDATA[$F{apellido1}]]></groupExpression>
+		<groupHeader>
+			<band height="34">
+				<staticText>
+					<reportElement x="0" y="0" width="100" height="34" forecolor="#666666" uuid="0ae931bc-65e0-4344-a42b-ac1ca25ec915"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[email]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="100" y="0" width="455" height="34" forecolor="#006699" uuid="e3dee02d-e671-4bf3-a9c3-7674905b144c"/>
+					<textElement>
+						<font size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group3">
+		<groupExpression><![CDATA[$F{apellido2}]]></groupExpression>
+		<groupHeader>
+			<band height="31">
+				<staticText>
+					<reportElement x="0" y="0" width="100" height="30" forecolor="#666666" uuid="511601ef-0de8-416c-806a-fc5606b8f5d2"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[ciudad]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="100" y="0" width="455" height="30" forecolor="#006699" uuid="ed786736-01f1-499f-a219-547fcfee8145"/>
+					<textElement>
+						<font size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{codigo_oficina} + ' ' + $F{ciudad}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group4">
+		<groupExpression><![CDATA[$F{email}]]></groupExpression>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="codigo_oficina">
+		<groupExpression><![CDATA[$F{codigo_oficina}]]></groupExpression>
+	</group>
+	<group name="ciudad">
+		<groupExpression><![CDATA[$F{ciudad}]]></groupExpression>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="70" backcolor="#006699" uuid="9ac9459e-cdc5-4188-8348-f7e35d148bd2"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="99b4591d-2139-4dcd-a25f-d47af6c116e2"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[EMPLEADOS]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="b3af5dfb-f990-4866-8b23-dfe19ffb1ef3"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="1927d2fd-0f48-4d7c-8dfa-56737a270e2e"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="4813da9b-fa0a-49dc-a378-c3d6a8cc2fdc"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="89fa0688-f8e5-4770-bac1-614ecc2ea080"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
